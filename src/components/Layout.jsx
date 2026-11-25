@@ -1,10 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
+import routes from "../routes.js";
 
 export default function Layout() {
   return (
     <div className="app">
       <header className="header">
-        <Link to="/">Hexlet Chat</Link>
+        <Link to={routes.home}>Hexlet Chat</Link>
       </header>
       <main className="main">
         <Outlet />

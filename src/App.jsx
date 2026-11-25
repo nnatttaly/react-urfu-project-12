@@ -5,6 +5,7 @@ import MainPage from "./pages/MainPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import Layout from "./components/Layout.jsx";
+import routes from "./routes.js";
 import "./styles.css";
 
 function App() {
@@ -13,9 +14,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path={routes.home} element={<MainPage />} />
+            <Route path={routes.login} element={<LoginPage />} />
+            <Route path={routes.notFound} element={<NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
