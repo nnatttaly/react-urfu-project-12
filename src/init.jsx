@@ -11,7 +11,7 @@ const init = async (socket) => {
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider>
-        <App />
+        <App socket={socket} />
       </MantineProvider>
     </QueryClientProvider>
   );

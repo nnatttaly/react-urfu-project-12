@@ -1,4 +1,6 @@
-export default function ChatContent({ channel, messages }) {
+import MessageForm from "./MessageForm.jsx";
+
+export default function ChatContent({ channel, messages, onSendMessage }) {
   return (
     <section className="chat-content" aria-label="Чат">
       <header className="chat-heading">
@@ -12,6 +14,7 @@ export default function ChatContent({ channel, messages }) {
           </p>
         ))}
       </div>
+      <MessageForm onSendMessage={onSendMessage} disabled={!channel} />
     </section>
   );
 }

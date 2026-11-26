@@ -7,12 +7,12 @@ import Layout from "./components/Layout.jsx";
 import routes from "./routes.js";
 import "./styles.css";
 
-function App() {
+function App({ socket }) {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path={routes.home} element={<MainPage />} />
+          <Route path={routes.home} element={<MainPage socket={socket} />} />
           <Route path={routes.login} element={<LoginPage />} />
           <Route path={routes.notFound} element={<NotFoundPage />} />
         </Route>

@@ -19,13 +19,13 @@ export default function LoginPage() {
     },
   });
 
-  const setToken = useAuthStore((state) => state.setToken);
+  const setAuthData = useAuthStore((state) => state.setAuthData);
   const navigate = useNavigate();
 
   async function handleLogin({ username, password }) {
     try {
       const { token } = await login({ username, password });
-      setToken(token);
+      setAuthData(token, username);
       navigate(routes.home, { replace: true });
     } catch (error) {
       form.setFieldError(

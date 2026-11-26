@@ -163,7 +163,80 @@ body {
   overflow-wrap: anywhere;
 }
 
+.message-form {
+  margin: 16px 40px 20px;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 56px;
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px #00000015;
+}
+
+.message-input:focus-within {
+  border-color: var(--mantine-color-blue-6);
+}
+
+.message-input input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+}
+
+.message-input input::placeholder {
+  color: #adb5bd;
+}
+
+.message-input button {
+  display: flex;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #1971c2;
+  cursor: pointer;
+}
+
+.message-input button span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.message-input button:hover:not(:disabled),
+.message-input button:focus-visible {
+  background: #a5d8ff;
+}
+
+.message-input button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.message-error {
+  margin: 8px 0 0;
+  color: #e03131;
+  font-size: 14px;
+}
+
 @media (max-width: 640px) {
+  .message-form {
+    margin: 16px;
+  }
+
   .chat-messages {
     padding: 0 16px;
   }
